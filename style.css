@@ -1,0 +1,511 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-size: 100%;
+  /*background-color: #9abae0;*/
+}
+
+#map{
+	width: 80%;
+	height: 100%;
+	position: absolute;
+	display: block;
+	top: 0px;
+	left: 0px;
+	background-color: #587E8D;
+/*
+	background-image: url('./paper_texture.png');
+*/
+}
+
+#map-info{
+	position: absolute;
+	top: 0px;
+	left: 80%;
+	width: 18%;
+	height: 100%;
+	background: #322E2F;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	opacity: 1;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+#country-hover div{
+	display: none;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+/*
+	position: absolute;
+*/
+}
+
+#country-hover div.on {
+	display: block;
+/*
+	position: absolute;
+*/
+	opacity: 1;
+}
+
+.infoBox{
+	position: absolute;
+	display: inline;
+
+	/*left: -50px;*/
+	width: 200px;
+	text-align: center;
+}
+.countryInfo{
+	padding: 6px 8px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: white;
+	background: rgba(240,240,240,1);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 2px;
+	opacity: 1;
+	width: 200px;
+	height: 280px;
+}
+.countryInfo h4 {
+	margin: 0 0 5px;
+	color: #777;
+}
+.breakHeader{
+	font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    display: block;
+}
+.breakData{
+    text-align: center;
+    position: absolute;
+	display: inline;
+	
+	width: 200px;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0%); /* Yep! */
+	padding-bottom: 10px;
+}
+
+.breakHeader > span{
+	color: #FFF;
+	font-weight: 200;
+	font-size: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.breakData > span{
+	color: #FFF;
+	font-weight: 200;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 5px;
+}
+
+#breakCountry > span{
+	font-size: 18px;
+	line-height: 110%;
+}
+
+#dataCountry > span{
+	font-size: 25px;
+	color: #CF9926;
+	margin-top: 10px;
+}
+
+#breakWasteCXN > span{
+	font-size: 18px;
+	line-height: 110%;
+	margin-top: 0px !important;
+}
+
+#dataWasteCXN > span{
+	font-size: 25px;
+	color: #CF9926;
+}
+
+h1 {
+  text-align: center;
+  color: #1d1d1d;
+  text-transform: uppercase;
+  font-family: Helvetica;
+  font-size: 17px;
+}
+
+.cartodb-searchbox {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+}
+
+#parks {
+  position: fixed;
+  left: 75px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#park-button {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Helvetica;
+  position:absolute;
+  left:20px;
+  top: 2px;
+  width:300px;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+table, td {
+  border: 2px solid white;
+  border-collapse: collapse;
+}
+td {
+  padding: 10px;
+}
+tr {
+  height: 75px;
+}
+table td:first-child, table td:last-child  {
+  font-style: italic;
+  font-weight: none;
+  font-size: 11px;
+  width: 55px;
+}
+
+#species-tooltip {
+  display: inline;
+  position: absolute;
+  width: 500px;
+  height: 270px;
+  margin-left: -420px;
+  margin-top: -270px;
+  border-radius: 8px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  pointer-events: auto;
+  border: 2px solid #fff;
+}
+
+#link {
+  color: #fff;
+  position: absolute;
+  top: 80px;
+  right: 15px;
+}
+
+#link:hover {
+  text-decoration: underline;
+}
+
+.leaflet-popup-tip-container {
+  display: none;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  top: 10px;
+}
+
+.leaflet-popup-content-wrapper {
+  background: none;
+  box-shadow: none;
+}
+
+#species-text {
+  color: rgb(140, 191, 68);
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Helvetica;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#species-facts {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Helvetica;
+  position: absolute;
+  top: 230px;
+  width: 96%;
+  height: 100px;
+  left: 2%;
+}
+
+.species-span {
+  font-size: 16px;
+  font-style: italic;
+  width: 370px;
+  position: absolute;
+  left: 120px;
+  display: block;
+  text-align: left;
+  color: rgb(6, 45, 102);
+}
+
+.species-pic {
+  width: 100%;
+  position: absolute;
+  left: 0px;
+}
+
+#tool-tip {
+  pointer-events: none;
+  position: absolute;
+  right: 10px;
+  bottom: 50px;
+  width: 375px;
+  height: 325px;
+  z-index: 50;
+}
+
+#tooltip-info {
+  position: absolute;
+  right: 58px;
+  bottom: 37px;
+  width: 270px;
+  height: 280px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+#biome-label-container {
+  position: absolute;
+  right: 60px;
+  bottom: 20px;
+  width: 388px;
+  height: 280px;
+  pointer-events: none;
+}
+
+#biome-label {
+  display: none;
+  position: absolute;
+  width: auto;
+  height: 20px;
+  bottom:175px;
+  padding: 5px 10px 2px 10px;
+  pointer-events: none;
+  z-index: 1000;
+  background-color: #c9c9c9;
+  opacity: 0.9;
+  border-radius: 13px;
+  color: #494846;
+  font-size: 13px;
+  font-family: Helvetica;
+  text-align: center;
+  font-weight: bold;
+}
+
+span {
+  color:#323232;
+  font-size: 12px;
+  font-family: Helvetica;
+  text-align: center;
+  display: block;
+}
+
+#tooltip-info span {
+  color: #fff;
+  font-size: 13px;
+  font-family: Helvetica;
+  text-align: center;
+  font-weight: bold;
+}
+
+#globals span {
+  display:none;
+  font-size: 38px !important;
+  color: #08b900 !important;
+  font-weight: bold;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+#protections span {
+  position: absolute;
+  display:none;
+  font-size: 15px !important;
+  color: #494846 !important;
+  font-weight: bold;
+}
+
+#biome-specifics {
+  display: none;
+}
+
+#globals {
+  position: absolute;
+  top: 125px;
+  left: 72px;
+  text-align: center;
+  width: 125px;
+}
+
+#country-hover {
+	padding: 5px;
+	position: absolute;
+	display: none;
+	width: 300px;
+	pointer-events: none;
+
+	background-color: #322E2F;
+}
+
+#country-hover div {
+	color: #fff;
+	font-family: Helvetica;
+	font-size: 15px;
+	display: block;
+}
+
+.leaflet-control-attribution {display: none;}
+
+a {
+  color:#4c52ff;
+  text-decoration: none;
+}
+#legends {
+  position: absolute;
+  left:10px;
+  bottom:10px;
+}
+.legend {
+  width:210px;
+  height: 67px;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: 1px solid #fff;
+  opacity: 1;
+}
+.legend div {
+  width:30px;
+  height:22px;
+  display: table-cell;
+  margin:0;
+  padding: 0;
+}
+.left {
+  position: absolute;
+  left:15px;
+  top:30px;
+  font-family: Helvetica;   
+  font-size: 13px;
+  color: #4a4947;
+}
+.right {
+  position: absolute;
+  right:15px;
+  top:30px;
+  font-family: Helvetica;   
+  font-size: 13px;
+  color: #4a4947;
+}
+.colors {
+  position: absolute;
+  left: 15px;
+  top: 46px;
+  border: 1px solid #a4a2a2;
+  width:180px;
+}
+.legend_title {
+  text-align: center;
+  margin-top: 5px;
+  font-family: Helvetica;
+  font-size: 10px;
+  color: #4a4947;
+}
+
+.cartodb-infobox {
+	font-family: Helvetica;
+}
+
+#rotated_text {
+  position: absolute;
+  /*top: 43px;
+  left: -22px;*/
+  top: 80px;
+  left: -76px;
+  color: #444;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  width: 200px; /*90px;*/
+  height: 29px;
+   /* Safari */
+  -webkit-transform: rotate(-90deg);
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+  /* IE */
+  -ms-transform: rotate(-90deg);
+  /* Opera */
+  -o-transform: rotate(-90deg);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.handle {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  top: -1px !important;
+}
+
+#slide_out_info {
+  width: 500px;  /*350*/
+  height: 50%;
+  border-radius: 0 0 10px 0px;
+  background: #ccc;
+  border: 1px solid #a4a2a2;
+  background-color: white;
+  opacity: 1;
+  z-index: 1001;
+}
+
+.content {
+  height: 100%;
+  width: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.text {
+  padding: 20px;
+}
+
+#switch {
+  background-color: #c9c9c9;
+  width: 35px;
+  height: 20px;
+  border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+}
+
+#switch-button {
+  background-color: #fff;
+  border-radius: 8px;
+  -o-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  
+}
