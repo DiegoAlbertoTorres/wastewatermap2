@@ -1,0 +1,294 @@
+html, body, #map {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background-color: #9abae0;
+      }
+
+      #map {
+         background-color: #9abae0;
+      }
+      .selected {
+        background-color: #ff8a87;
+      } 
+
+       
+      #tool-tip,
+      #layer_selector li {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 400;
+      }
+      h1 {
+        text-align: center;
+        color: #1d1d1d;
+        text-transform: uppercase;
+        font-family: arial;
+        font-size: 17px;
+      }
+  
+      .countries_label {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        color: #444;
+      }
+
+      #layer_selector {
+        position: absolute;
+        top: 0px;
+        left: 50px;
+        padding: 0px;
+        width: 330px;
+      }
+
+      #layer_selector ul {
+        padding: 0; margin: 0;
+        list-style-type: none;
+      }
+      
+      #show_cities {
+        cursor: pointer;
+      }
+
+      #layer_selector li {
+        border-bottom: 1px solid #999;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 13px;
+        color: #444;
+        cursor: pointer;
+        display: inline;
+        -webkit-transition: color 2s; /* For Safari 3.1 to 6.0 */
+        transition: color 2s;
+      }
+
+      #layer_selector2 {
+        position: absolute;
+        width: 100px;
+        top: 16px;
+        left: 395px;
+        padding: 0;
+        background-color: #ff8a87;
+      }
+
+      #layer_selector2 p {
+        padding-left: 15px;
+        padding-right: 5px;
+        font-size: 13px;
+        color: #444;
+        cursor: pointer;
+        display: inline;
+        -webkit-transition: color 2s; /* For Safari 3.1 to 6.0 */
+        transition: color 2s;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+      }
+      
+      #toggle_window {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 0;
+        background-color: white;
+        opacity: 0.9;
+        border-radius: 3px;
+      }
+      
+      #toggle_window ul {
+        padding: 0; margin: 0;
+        list-style-type: none;
+      }
+
+      #toggle_window li {
+        border-bottom: 1px solid #999;
+        padding-left: 15px;
+        padding-right: 5px;
+        font-size: 13px;
+        color: #444;
+        cursor: pointer;
+        display: inline;
+        -webkit-transition: color 2s; /* For Safari 3.1 to 6.0 */
+        transition: color 2s;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+      }
+
+      #toggle_window li:hover {
+        color: #3E7BB6;
+        cursor: pointer;
+      }
+
+      #toggle_window li.selected {
+        color: white;
+      }
+
+      #layer_selector li:hover {
+        color: #3E7BB6;
+        cursor: pointer;
+      }
+
+      #layer_selector li.selected {
+        color: white;
+      }
+      #tool-tip {
+        position: absolute;
+        width: auto;
+        height: auto;
+        background-color: white;
+        opacity: .9;
+        z-index: 50;
+        border-radius: 15px;
+        text-align: center;
+        color: #3E7BB6;
+        vertical-align: bottom;
+        font-size: 12px;
+        padding: 4px;
+      }
+
+      .leaflet-control-attribution {display: none;}
+      #tool-tip p {
+        margin-top: 5px;
+      }
+      .hidden {display: none;}
+      #header_container { 
+        opacity: .9; 
+        height:50px; 
+        position:fixed; 
+        width:100%;  
+        top:10px; 
+        display: block;
+      }
+    
+
+      span {
+        color:#323232;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-family: arial;
+        text-align: center;
+        display: block;
+      }
+
+      a {
+        color:#4c52ff;
+        text-decoration: none;
+      }
+      #legends {
+        position: absolute;
+        left:10px;
+        bottom:10px;
+      }
+      .legend {
+        width:330px;
+        height: 85px;
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 10px;
+        border: 1px solid #a4a2a2;
+        box-shadow: rgba(0,0,0,0.2) 0 0 4px 2px;
+        opacity: 1;
+      }
+      .legend div {
+        width:30px;
+        height:22px;
+        display: table-cell;
+        margin:0;
+        padding: 0;
+      }
+      .country_leftest {
+        position: absolute;
+        left:15px;
+        top:40px;
+        font-family: arial;   
+        font-size: 13px;
+        color: #6b6a6a;
+      }
+      .country_rightest {
+        position: absolute;
+        right:15px;
+        top:40px;
+        font-family: arial;   
+        font-size: 13px;
+        color: #6b6a6a;
+      }
+      .country_middle {
+        position: absolute;
+        left:165px;
+        top:40px;
+        font-family: arial;   
+        font-size: 13px;
+        color: #6b6a6a;
+      }
+      .bottom_middle {
+        top: 82px;
+        left: 152px;
+        font-size: 10px;
+      }
+      .bottom_right {
+        top: 82px;
+        font-size: 10px;
+      }
+      .colors {
+        position: absolute;
+        left: 15px;
+        top: 56px;
+        border: 1px solid #a4a2a2;
+        width:300px;
+      }
+      .legend_title {
+        text-align: center;
+        margin-top: 10px;
+        font-family: arial;
+        font-size: 13px;
+        color: #6b6a6a;
+      }
+
+      #rotated_text {
+        position: absolute;
+        top: 43px;
+        left: -22px;
+        color: #444;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+
+         /* Safari */
+        -webkit-transform: rotate(-90deg);
+        /* Firefox */
+        -moz-transform: rotate(-90deg);
+        /* IE */
+        -ms-transform: rotate(-90deg);
+        /* Opera */
+        -o-transform: rotate(-90deg);
+        /* Internet Explorer */
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+          width: 90px;
+          height: 29px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      #slide_out_info {
+        width: 60%;
+        height: 50%;
+        border-radius: 10px;
+        background: #ccc;
+        border: 1px solid #a4a2a2;
+        background-color: white;
+        opacity: .9;
+        z-index: 50;
+      }
+
+      .content {
+        height: 100%;
+        width: auto;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+      .text {
+        padding: 20px;
+      }
